@@ -1,0 +1,42 @@
+[build-system]
+requires = [
+  "hatchling",
+  "hatch-requirements-txt",
+  "hatch-fancy-pypi-readme>=22.5.0",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "gradio_box_promptable_image"
+version = "0.0.1"
+description = "A webcam-compatible Gradio input image component enabling prompting with bounding boxes."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+authors = [{ name = "ncstiles" }]
+keywords = ["gradio-custom-component", "gradio-template-Image"]
+# Add dependencies here
+dependencies = ["gradio>=4.0,<5.0"]
+classifiers = [
+  'Development Status :: 3 - Alpha',
+  'License :: OSI Approved :: Apache Software License',
+  'Operating System :: OS Independent',
+  'Programming Language :: Python :: 3',
+  'Programming Language :: Python :: 3 :: Only',
+  'Programming Language :: Python :: 3.8',
+  'Programming Language :: Python :: 3.9',
+  'Programming Language :: Python :: 3.10',
+  'Programming Language :: Python :: 3.11',
+  'Topic :: Scientific/Engineering',
+  'Topic :: Scientific/Engineering :: Artificial Intelligence',
+  'Topic :: Scientific/Engineering :: Visualization',
+]
+
+[project.optional-dependencies]
+dev = ["build", "twine"]
+
+[tool.hatch.build]
+artifacts = ["/backend/gradio_box_promptable_image/templates", "*.pyi", "backend/gradio_box_promptable_image/templates"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["/backend/gradio_box_promptable_image"]
